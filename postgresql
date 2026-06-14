@@ -1,0 +1,24 @@
+-- 1. Create the login role (skip if it already exists).
+do $$
+begin
+  if not exists (select 1 from pg_roles where rolname = 'waitlist_writer') then
+    create role waitlist_writer with login password '<<strong-password>>';
+  end if;
+end
+$$;
+
+-- If the role already exists and you only need to (re)set the password:
+-- alter role waitlist_writer with password '<<strong-password>>';
+
+-- 2. Reach the schema and insert into the one table — nothing else.
+grant usage  on schema public            to waitlist_writer;
+grant insert on public.waitlist_signups  to waitlist_writer;
+
+-- 3. RLS is enabled on the table, so the grant alone is denied.
+--    This policy is what actually permits the role to write, and only INSERT.
+drop policy if exists waitlist_writer_insert on public.waitlist_signups;
+create policy waitlist_writer_insert
+  on public.waitlist_signups
+  for insert
+  to waitlist_writer
+  with check (true);

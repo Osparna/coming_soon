@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osparna — coming soon</title>
+<meta name="description" content="Osparna — decision intelligence for investors. A connected universe of companies, investors, and the people who move between them. Launching soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1830;
+    --indigo:#534AB7;
+    --violet:#7F77DD;
+    --blue:#378ADD;
+    --muted:#6B6A7A;
+    --bg:#ffffff;
+    --hair:rgba(83,74,183,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+    overflow:hidden;
+  }
+  /* ambient brand wash, kept off the top-left so the logo stays on clean white */
+  .wash{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(60% 55% at 82% 88%, rgba(127,119,221,.10), transparent 70%);
+  }
+  .net{position:fixed;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+  .frame{
+    position:relative;z-index:1;
+    min-height:100%;
+    display:flex;flex-direction:column;
+    padding:clamp(26px,5vw,64px);
+  }
+  .logo{height:clamp(30px,4vw,38px);width:auto;display:block}
+  main{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:760px}
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:13px;letter-spacing:.12em;color:var(--indigo);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--violet);
+    box-shadow:0 0 0 0 rgba(127,119,221,.5);animation:beat 2.6s ease-in-out infinite}
+  h1{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;
+    font-size:clamp(2.1rem,6.2vw,4.1rem);line-height:1.04;letter-spacing:-.025em;
+    max-width:14ch;
+  }
+  h1 .accent{color:var(--indigo)}
+  .sub{
+    margin-top:24px;max-width:54ch;
+    font-size:clamp(1rem,2.1vw,1.2rem);line-height:1.65;color:var(--muted);
+  }
+  footer{
+    position:relative;z-index:1;
+    display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;
+    padding-top:28px;border-top:1px solid var(--hair);
+  }
+  .tag{font-family:'Space Mono',monospace;font-size:13px;color:var(--ink);letter-spacing:.02em}
+  .contact{
+    font-size:14px;color:var(--indigo);text-decoration:none;
+    display:inline-flex;align-items:center;gap:7px;border-radius:6px;
+    transition:gap .18s ease;
+  }
+  .contact:hover{gap:11px}
+  .contact:hover .label{text-decoration:underline}
+  .contact:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+  .arrow{transition:transform .18s ease}
+  .contact:hover .arrow{transform:translateX(2px)}
+  @keyframes beat{0%,100%{box-shadow:0 0 0 0 rgba(127,119,221,.45)}50%{box-shadow:0 0 0 7px rgba(127,119,221,0)}}
+  .node{animation:pulse 4.2s ease-in-out infinite}
+  .n2{animation-delay:.7s}.n3{animation-delay:1.5s}.n4{animation-delay:2.2s}.n5{animation-delay:3s}
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:.9}}
+  @media (max-width:600px){
+    footer{flex-direction:column;align-items:flex-start;gap:14px}
+    main{max-width:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .node,.eyebrow .dot{animation:none}
+  }
+</style>
+</head>
+<body>
+  <div class="wash" aria-hidden="true"></div>
+  <svg class="net" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g stroke="var(--indigo)" stroke-opacity=".15" stroke-width="1">
+      <line x1="120" y1="140" x2="300" y2="240"/>
+      <line x1="300" y1="240" x2="170" y2="430"/>
+      <line x1="300" y1="240" x2="520" y2="180"/>
+      <line x1="520" y1="180" x2="720" y2="300"/>
+      <line x1="720" y1="300" x2="980" y2="200"/>
+      <line x1="720" y1="300" x2="900" y2="470"/>
+      <line x1="170" y1="430" x2="360" y2="600"/>
+      <line x1="360" y1="600" x2="600" y2="660"/>
+      <line x1="600" y1="660" x2="900" y2="470"/>
+      <line x1="900" y1="470" x2="1080" y2="620"/>
+      <line x1="600" y1="660" x2="720" y2="300"/>
+      <line x1="980" y1="200" x2="1090" y2="360"/>
+      <line x1="520" y1="180" x2="360" y2="600"/>
+      <line x1="1080" y1="620" x2="1150" y2="430"/>
+    </g>
+    <g>
+      <circle class="node"    cx="120"  cy="140" r="4.5" fill="var(--blue)"/>
+      <circle class="node n3" cx="300"  cy="240" r="7"   fill="var(--indigo)"/>
+      <circle class="node n2" cx="520"  cy="180" r="5"   fill="var(--violet)"/>
+      <circle class="node n4" cx="720"  cy="300" r="8"   fill="var(--indigo)"/>
+      <circle class="node"    cx="980"  cy="200" r="5"   fill="var(--blue)"/>
+      <circle class="node n5" cx="1090" cy="360" r="4.5" fill="var(--violet)"/>
+      <circle class="node n2" cx="170"  cy="430" r="5"   fill="var(--violet)"/>
+      <circle class="node n4" cx="360"  cy="600" r="6"   fill="var(--blue)"/>
+      <circle class="node n3" cx="600"  cy="660" r="7"   fill="var(--indigo)"/>
+      <circle class="node"    cx="900"  cy="470" r="6"   fill="var(--violet)"/>
+      <circle class="node n5" cx="1080" cy="620" r="5"   fill="var(--blue)"/>
+      <circle class="node n2" cx="1150" cy="430" r="4"   fill="var(--violet)"/>
+    </g>
+  </svg>
+
+  <div class="frame">
+    <header>
+      <img class="logo" alt="Osparna" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCABkAGQDASIAAhEBAxEB/8QAHAABAAMBAAMBAAAAAAAAAAAAAAMFBgQBAgcI/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAMEBQEC/9oADAMBAAIQAxAAAAH9UgAAAAAAAAhxM3RrUubS00PPOxGVfAAAAwGnr6/Yo9nH1zvGmGPogAGP8mvYK5NHlaXSSwwajA3bujZGoil+iqPMH0MGARWpmLJUGj4O+UnrPa8KGa4Gbu46w36mF2BUW4AAAAAAAAAAAA//xAAnEAADAAMAAAQFBQAAAAAAAAADBAUBAgYQEiQwABMUFRYRICNAUP/aAAgBAQABBQL+8Y2i4gaPXtSzqE3Wc8Okn7NnOaTxzGeb/HRYxFa+UX2SkIn0EpH6BPoG98C+mGtW9nolhlnhHY3CBEcfWIvv5PZzj9cfZSLbaRdjF/c9dJq9MuFYfz0DjpT2Pt8o3R0ER1LQpgPyFxM9ezrM+M2TITjdI+jpUrhlKE6N5Dw43+ZDPqe32G7xo6ZNaPQdoX5fOhDjfruknGqKL+q7S76roO1J5eeaHgnVdOgepG1x5dRQ6UvZOGWemeJVq6HTYodUGI223TjM70RwHCU5svKLmZWdr1eXmpmvGM05tAebb31oefxTmCSZ/wAP/8QAJBEAAgECBAcBAAAAAAAAAAAAAQIDABEEBRIhBhMxQVFhgaH/2gAIAQMBAT8B4Msl/wBc0rtG4DjAH3jmss3k704Mjhe/P4BuczxLJqpIlj09T//EACoRAAEDAQUGBwAAAAAAAAAAAAECAxEhABIgMkEEEzAxQPBhgZGhscHR/9oACAECAQE/AeC0jcoChF41k6D9PfOzpS+0SKqGsRT7+cSo2hlJvBOhnwFPa19LbUINBPmo09AO64kOqby2W4pzN1P/xAA2EAABAwMBBQUGBAcAAAAAAAABAgMEABESBRMhMUFRFCIyYXEjMGKBsdEgJHKREDNAUFOi4f/aAAgBAQAGPwL+uW44cUIFya26pC4ERX8ttrxqHUmtrDmuy8d5YknLL0NNyG+CuR5Hp7pjS0eA+1kH4OnzpUKGvYMsj2rqeXwirpkSUuf5NrvpUNZbXxcbeatZwc/n7qbgnJ5+OCyOpHKkoPedV3nFdVU3Cjn81KOA+FPM1pcVjhHbWVelvv7ourQsrZ7yVtGyk+dJ2U6K80obnVNnKnp0t8yJGPeeX9AKcmPj8xJOR+FPIe6seFEwZaoyTv2RTkn5UlydJVLx3hFsUft+NUKBEM2SgXc72KG/U0uDNidjlhG0SMskrT5GnRpmn9qZaVgXnHQgKPlQlzmTHc4bBKszlyA60JMzSSzCv3lJdClI8yKaXip9x44stN8VmmBqWndlYeVgl1DoXifOmm0NKky3jZphHE/YU7K1OOIxCrIbbXmV0mTN0ksQrjJYdClI8yKD67uZEJbQjeVk8AKQ9qGl9mhqIBcS6FlHqP4SZh8UqQty/wA7ULcI0Tf6k/anXGsZmk55lHBxq/1rQ2k95oBUo/t3akpG9buLaR1JNMNcUwoW79RNvpTDLIB9uhS7ngkcalr4iLGS36FW+tEi8Uha31D9I3U+2PG8pLafmqtJi8URWFO2/wBRT0WOAVuFPE8rg0AOVOt6bNZREWorCHm7lu/SpOxlZahIOS5Tib3Pp0oMahOZ7Jfvpjt2K/K9STCk9kXBYbbScbp377GmZGqSkP7A5NsMpxQFdT1pOoafITHk4bNaXE3SsVCmy523UyVFTYGKRu3Yip8hTm0VKcy4cAOAoagpy6UsbFLduG+96h+0wQw+l5Qt4rcqYnQpAjzGk4d9N0qT0NQ5EycHFMuhezQnFAHl/wBo4OR8eWSTf8Et9BUXJKsl5f2T/8QAJhABAAEDAgUFAQEAAAAAAAAAAREAITFBUWFxkaHwIDCBscFAUP/aAAgBAQABPyH+4Cqr9AopedBNLpZpUQycO2UalBDvm1lyfabJDCaBt835UXCAV1psvnN5oaXVc1wKJ11rXZ9q+jXIFq3dY4VNOQ7yzWhwT4YeWoJMQxmcBef29pNAE4ckh7/FNMzDiN4LVjicIg6blVlCBPhx7QMAqyNK9vIRvA4pJK7ODvDPrGEp4kcSa8KSJBAzESH1UllRhchc86lfFwFTCjJp1aAKSwQaiodc3bcONEKNkRcETvSLukYhyrob0IPU3zgOM/VNwgBksEHtViuh6OFTESa44SMVmtcG2qLB8Q0tbv5pbn2ocJRdsrw4HlqsqBHhf61CKTs426TSFt5PS4UA6TMEqUdqvqw/Efmh0Ekyes0lwg26H4Na8B2+T4igImYgDHtQ4kIKeIM5mQjJzqQSELseEEgaTQRSCsMZksfFZXAkroW0PauWWXITXRpWqxuWyTslZGWBqA5kqt21COEthGjiUAzcQM0+1C8FVlnjupoHpSdoU+9S4TQasxennTNN/QCDLIYggC2P8T//2gAMAwEAAgADAAAAEPPPPPPPPPH2vPPPPHufPPMPNVPPMCLPFBMDPPPPPPPPPPPPPPP/xAAiEQEAAgEDAwUAAAAAAAAAAAABESExAEFxIFGRMEBhgaH/2gAIAQMBAT8Q9ECCKTAGckbUGbjM41jCwwTt2SfE7znpB0iAoGwrYq1Im6jE2xyyL5An2AcT26otFmEUThEf3RbC3Kqrysr59z//xAAdEQEBAQEAAgMBAAAAAAAAAAABESExACAwQXFA/9oACAECAQE/EPhaIDgpzGI6cxZJ9vESGjg+rQyMR4Lac9YJwaNSIQcxjG1L9K9xCySqQdrZduwx7WhY9EEf0RPHysOAAH4ED+n/xAAjEAEBAAICAgIDAAMAAAAAAAABESExAEFxIFGRMEBhgaH/2gAIAQEAAT8Q/wA7UdQw1X+HMPM27YVxZAxH4Uz2QROUAR6Jl76arP6EZ7gJ7339ZTAc7O8ieyLV4I0j1YeiAZep1JxDd5CvuaR/hxasKr2Iat4bjdV/TEW1UEZQU3rXscyhg7XLa9zQ+A5FO91mWeZCpfanFZp/QKT3Rfdd/qCx9mceCDI7OiCDmg8KY278974vzoIl0LBWANr1rmLAtl0F0EP2Dr9QQFQKI7E4l7qpm6d/V/nCRdUV6Vhnl+x/NvvYONImsyEs7whvRcOYIMjvLT4QAHjMUSikfjwkjxtxggAHGAW6Xh5ISvgQ7SlJYtwnwtIDBPQCKsAm1BFNrZF+EHwYR3mCdUokV/ANqzxBQ/akiBjgWknssC8GgdZ8CDtLRFi3D/ANbCKcS7vj6GuTXTcKNkqa1lgiARo5E4TLv3p+jwjq8ImQfOd+0cGbkWB1qCm8u5k8aOLLYFTpG/3ik3agHj3D+uMF21QkPnG8lE/wDuKW06GWvDpTZyZWeFo+OA8VSyIVD5jgRiWek8Gt++lQIO1FPDxxndC0k+DX3y8gW3gIcXgUYypNmQw9Wq7CybRwymQByOcHDbM8+BXFQX01yV5kG3ftprIh2cK3UaNtJ6A4H5RGeKyfgDKOzcNRplEI8LYukjYDE4fmcLnOa0C5x8cbrIbu0Hs0n3x7vSrhkUlcnPB8I7L13gFUS78xBT/eRUCq9lsBAO8cl7CJ4E3dfgdffYsbiAWDXO/wDSf//Z">
+    </header>
+
+    <main>
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span>coming soon</p>
+      <h1>The next winners are <span class="accent">legible before they win.</span></h1>
+      <p class="sub">Osparna maps the venture, private-equity, and technology universe — companies, investors, and the people who move between them — into one connected graph you can read. Launching soon.</p>
+    </main>
+
+    <footer>
+      <span class="tag">decision intelligence for investors · founded by builders, not auditors</span>
+      <a class="contact" href="mailto:info@osparna.com">
+        <span class="label">Get in touch</span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </footer>
+  </div>
+</body>
+</html>

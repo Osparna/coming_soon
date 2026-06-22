@@ -29,7 +29,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -64,7 +64,7 @@
   @media(max-width:680px){.links{gap:14px}.links .ln{display:none}}
   main{flex:1}
   .wrap.form{max-width:620px;padding-top:clamp(56px,9vw,96px);padding-bottom:clamp(56px,9vw,96px)}
-  .eyebrow{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
   h1{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.06;letter-spacing:-.025em;margin-top:14px}
   .sub{margin-top:16px;color:var(--muted);font-size:1.08rem;line-height:1.6;max-width:48ch}
   form{margin-top:34px;display:flex;flex-direction:column;gap:18px}
@@ -80,7 +80,9 @@
   .msg[hidden]{display:none}
   footer{border-top:1px solid var(--hair)}
   footer .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;padding:26px 0}
-  .tag{font-family:'Space Mono',monospace;font-size:13px;color:var(--faint)}
+  .tag{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--faint)}
+  footer a.tag{text-decoration:underline;text-underline-offset:2px}
+  footer a.tag:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -91,7 +93,8 @@
         <a class="ln" href="index.html#what-we-do">What We Do</a>
         <a class="ln" href="about.html">Who We Are</a>
         <a class="ln" href="blog.html">Blog</a>
-        <a class="pill" href="contact.html">Contact Us</a>
+        <a class="ln" href="contact.html">Contact Us</a>
+        <a class="ln" href="https://app.osparna.com">Sign In / Sign Up</a>
       </nav>
     </div>
   </header>
@@ -124,7 +127,7 @@
 
   <footer><div class="wrap row">
     <span class="tag">decision intelligence for investors</span>
-    <span class="tag">info@osparna.com</span>
+    <a class="tag" href="privacy.html">Privacy</a> <span class="tag">info@osparna.com</span>
   </div></footer>
 
   <script>

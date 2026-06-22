@@ -1,7 +1,7 @@
 import postgres from 'postgres';
 
 // prepare:false is required for the Supabase transaction pooler (port 6543)
-const sql = postgres(process.env.DATABASE_URL, { prepare: false });
+const sql = postgres(process.env.CONTACT_DB_URL, { prepare: false });
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'method not allowed' });

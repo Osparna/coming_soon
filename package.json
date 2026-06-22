@@ -1,9 +1,6 @@
 {
-  "name": "osparna-site",
-  "version": "1.0.0",
   "private": true,
-  "description": "Osparna marketing site (static pages + Vercel serverless API for waitlist and contact capture).",
   "dependencies": {
-    "postgres": "^3.4.4"
+    "postgres": "^3.4.0"
   }
 }

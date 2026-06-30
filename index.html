@@ -32,7 +32,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&family=Space+Mono&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -74,11 +74,14 @@
   .links a:hover{color:#fff}
   .links .pill{background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:9px 18px;border-radius:999px}
   .links .pill:hover{color:#fff;opacity:.94}
+  .links .soon{display:inline-flex;align-items:center;gap:7px;color:var(--faint);cursor:default}
+  .links .soon:hover{color:var(--muted)}
+  .links .soon-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);border:1px solid var(--hair);border-radius:5px;padding:1px 5px}
   @media(max-width:680px){.links{gap:14px}.links .ln{display:none}}
   .hero{position:relative;overflow:hidden}
   .net{position:absolute;inset:0;z-index:0;opacity:.9;pointer-events:none}
   .hero .wrap{position:relative;z-index:1;padding:clamp(64px,11vw,120px) clamp(20px,5vw,48px) clamp(56px,9vw,104px)}
-  .eyebrow{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.14em;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:20px}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.14em;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:20px}
   .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--blue2);box-shadow:0 0 0 0 rgba(45,156,236,.5);animation:beat 2.6s ease-in-out infinite}
   h1{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(2.1rem,6vw,4rem);line-height:1.05;letter-spacing:-.025em;max-width:15ch}
   h1 .accent{background:linear-gradient(100deg,#4f8bff,#36b3f0);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -93,34 +96,44 @@
   .msg[hidden]{display:none}
   .block{border-top:1px solid var(--hair)}
   .block .wrap{padding:clamp(52px,8vw,84px) clamp(20px,5vw,48px)}
-  .sec-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+  .sec-eyebrow{font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
   .block h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.02em;margin-top:12px;color:#fff;max-width:20ch}
   .block p{margin-top:16px;max-width:62ch;color:var(--muted);font-size:1.06rem;line-height:1.7}
   .block .more{display:inline-block;margin-top:18px;color:var(--accent);font-weight:500}
+  .product{border-top:1px solid var(--hair)}
+  .product .wrap{padding:clamp(48px,7vw,76px) clamp(20px,5vw,48px)}
+  .product .tagline{font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
+  .product .tagline .live{width:7px;height:7px;border-radius:50%;background:#3ddc8a;box-shadow:0 0 0 0 rgba(61,220,138,.5);animation:beat 2.6s ease-in-out infinite}
+  .product h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(1.5rem,3.2vw,2.1rem);letter-spacing:-.02em;margin-top:12px;color:#fff}
+  .product p{margin-top:16px;max-width:62ch;color:var(--muted);font-size:1.06rem;line-height:1.7}
+  .product .olu-cta{margin-top:26px}
+  .olu-link{display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#fff;border:1px solid var(--hair);padding:12px 20px;border-radius:999px}
+  .olu-link:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04)}
   footer{border-top:1px solid var(--hair)}
   footer .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:26px 0}
-  .tag{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--faint)}
-  footer a.tag{text-decoration:underline;text-underline-offset:2px}
-  footer a.tag:hover{color:#fff}
+  .tag{font-family:'Space Mono',monospace;font-size:13px;color:var(--faint)}
+  footer .links-row{display:flex;gap:18px;align-items:center}
+  footer .links-row a{font-family:'Space Mono',monospace;font-size:13px;color:var(--faint)}
+  footer .links-row a:hover{color:#fff}
   @keyframes beat{0%,100%{box-shadow:0 0 0 0 rgba(45,156,236,.5)}50%{box-shadow:0 0 0 7px rgba(45,156,236,0)}}
   .node{animation:pulse 4.2s ease-in-out infinite}.n2{animation-delay:.7s}.n3{animation-delay:1.5s}.n4{animation-delay:2.2s}.n5{animation-delay:3s}
   @keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
-  @media (prefers-reduced-motion:reduce){.node,.eyebrow .dot{animation:none}}
+  @media (prefers-reduced-motion:reduce){.node,.eyebrow .dot,.product .tagline .live{animation:none}}
 </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap row">
       <a class="brand" href="/" aria-label="Osparna home">
-        <img src="/logo.png" alt="Osparna" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-        <span class="wm" style="display:none">osparna</span>
+        <img src="/logo.png" alt="" onerror="this.style.display='none'">
+        <span class="wm">osparna</span>
       </a>
       <nav class="links" aria-label="Primary">
         <a class="ln" href="#what-we-do">What We Do</a>
         <a class="ln" href="about.html">Who We Are</a>
         <a class="ln" href="blog.html">Blog</a>
-        <a class="ln" href="contact.html">Contact Us</a>
-        <a class="ln" href="https://app.osparna.com">Sign In / Sign Up</a>
+        <span class="ln soon" aria-disabled="true" title="Investor login — coming soon">Investor login <span class="soon-tag">soon</span></span>
+        <a class="pill" href="contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -155,12 +168,24 @@
       <a class="more" href="about.html">Who we are &rarr;</a>
     </div>
   </section>
+
+  <section class="product" id="oluwadi">
+    <div class="wrap">
+      <p class="tagline"><span class="live" aria-hidden="true"></span>A product &middot; now live</p>
+      <h2>Oluwadi</h2>
+      <p>Oluwadi is the public front door to the Osparna graph. The same venture, private-equity, and technology universe we map for diligence &mdash; investors and the companies they back &mdash; opened to read region by region and thesis by thesis. Each edition weighs a place or a thesis for what it actually builds rather than what it&rsquo;s already known for, surfacing the overlooked alongside the obvious. Browse it today at <a class="more" href="https://www.oluwadi.com">oluwadi.com</a>.</p>
+      <p class="olu-cta"><a class="olu-link" href="https://www.oluwadi.com">Explore Oluwadi &rarr;</a></p>
+    </div>
+  </section>
   </main>
 
   <footer>
     <div class="wrap row">
       <span class="tag">decision intelligence for investors</span>
-      <a class="tag" href="privacy.html">Privacy</a> <span class="tag">info@osparna.com</span>
+      <span class="links-row">
+        <a href="https://www.oluwadi.com">Oluwadi &#8599;</a>
+        <span class="tag">info@osparna.com</span>
+      </span>
     </div>
   </footer>
 
